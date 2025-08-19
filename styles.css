@@ -1,0 +1,111 @@
+/* ========== Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; 
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ========== Header ========== */
+.header {
+  background: lightcoral;
+  font-family: "Frijole", system-ui;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  
+}
+
+/* ========== Navigation (Flexbox) ========== */
+.navbar {
+  background: burlywood;
+}
+.nav-links {
+  display: flex;                /* Flexbox */
+  justify-content: center;      /* Center links */
+  list-style: none;
+}
+.nav-links li {
+  margin: 0 1rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Grid Layout for Main Section ========== */
+.grid-container {
+  display: grid;                /* Grid */
+  grid-template-columns: 2fr 1fr; /* 2-column layout (content + sidebar) */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Content */
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 2px solid #ddd;
+}
+
+/* Flexbox for Cards */
+.card-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.card {
+  flex: 1;
+  padding: 1rem;
+  background: #ddd;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  background: lightcoral;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr;   /* Stack content + sidebar */
+  }
+
+  .sidebar {
+    order: -1; /* Sidebar above content */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;       /* Stack nav links */
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column;       /* Stack cards */
+  }
+}
